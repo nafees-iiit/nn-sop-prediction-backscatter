@@ -1,0 +1,16 @@
+Dataset: 4000 settings x 10000 Monte Carlo trials generated in 26.0 s (6.49 ms per setting)
+Train = 2800, Validation = 600, Test = 600
+
+Model comparison on unseen TEST data:
+               Model  Val R2 (log10 SOP)  Test R2 (log10 SOP)  Test MAE (log10 SOP)  Median relative error (SOP > 1e-3)  Training time (s)
+   Linear Regression              0.7070               0.7217                0.4312                              0.4102             0.0101
+       Random Forest              0.9559               0.9602                0.1332                              0.1376             2.8384
+Neural Network (MLP)              0.9940               0.9922                0.0530                              0.0590             4.9048
+
+Neural network stopped after 302 epochs (best validation score = 0.9952)
+
+Time per SOP value: Monte Carlo (100k trials) = 67.0 ms, Neural network = 4.7 us  ->  about 14,400x faster
+
+Learning curve (training samples -> test R2): 200->0.926, 400->0.902, 800->0.960, 1600->0.989, 2800->0.992
+
+All results saved in the 'results' folder.
